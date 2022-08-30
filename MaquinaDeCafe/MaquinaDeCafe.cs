@@ -14,9 +14,8 @@
     }
     public Grao Grao { get; internal set; }
     public int Agua { get; private set; }
-    public Po PoDoCafe { get; internal set; }
     public BorraDeCafe BorraDeCafe { get; }
-    public Po PodoCafe { get; private set; }
+    public Po PoDoCafe { get; private set; }
 
     public void Ligar()
     {
@@ -39,7 +38,7 @@
     {
         MoeGrao();
 
-        if (Ligada == false || Agua < 300 || PodoCafe == null) return null;
+        if (Ligada == false || Agua < 300 || PoDoCafe == null) return null;
 
         Agua -= 300;
         return new Cafe();
@@ -48,6 +47,7 @@
     private void MoeGrao()
     {
         if (Grao == null) return;
-        PodoCafe = new Po();
+        PoDoCafe = new Po();
+        Grao = null;
     }
 }
